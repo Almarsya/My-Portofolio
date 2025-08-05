@@ -1,0 +1,286 @@
+  <!DOCTYPE html>
+  <html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portofolio Cyber - Video Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+    <style>
+      :root {
+        --neon: #00fff7;
+        --dark: #0d0d0d;
+        --glow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Orbitron', sans-serif;
+        background: linear-gradient(120deg, #0f0f0f, #0a0a0a);
+        background-size: 200% 200%;
+        animation: cyberBackground 10s ease infinite;
+        color: var(--neon);
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      @keyframes cyberBackground {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      #cyber-bg {
+        position: fixed;
+        z-index: 0;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.04;
+      }
+
+      nav {
+        position: sticky;
+        top: 0;
+        background: #000;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        box-shadow: 0 2px 10px #00fff766;
+      }
+
+      nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: var(--neon);
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        text-shadow: var(--glow);
+      }
+
+      header {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        text-shadow: var(--glow);
+      }
+
+      .hero p {
+        font-size: 1.2em;
+        color: #ccc;
+      }
+
+      section {
+        padding: 80px 20px;
+        max-width: 1100px;
+        margin: auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 40px;
+        text-shadow: var(--glow);
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 3px solid var(--neon);
+        margin-bottom: 20px;
+        object-fit: cover;
+        box-shadow: var(--glow);
+      }
+
+      .skills, .services, .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: #111;
+        padding: 20px;
+        border: 1px solid var(--neon);
+        border-radius: 12px;
+        box-shadow: 0 0 10px #00fff744;
+        text-align: center;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--glow);
+      }
+
+      iframe {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      .contact a {
+        color: var(--neon);
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+      }
+
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #666;
+        background: #000;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+
+  <!-- SVG Cyber Background Lines -->
+  <svg id="cyber-bg" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="cyberLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#00fff7"/>
+        <stop offset="100%" stop-color="#00ff95"/>
+      </linearGradient>
+    </defs>
+    <g stroke="url(#cyberLine)" stroke-width="0.5">
+      <line x1="0" y1="20" x2="100%" y2="20">
+        <animate attributeName="y1" from="0" to="100%" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="y2" from="0" to="100%" dur="5s" repeatCount="indefinite" />
+      </line>
+      <line x1="0" y1="50" x2="100%" y2="50">
+        <animate attributeName="y1" from="0" to="100%" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="y2" from="0" to="100%" dur="7s" repeatCount="indefinite" />
+      </line>
+      <line x1="0" y1="80" x2="100%" y2="80">
+        <animate attributeName="y1" from="0" to="100%" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="y2" from="0" to="100%" dur="4s" repeatCount="indefinite" />
+      </line>
+    </g>
+  </svg>
+
+  <nav>
+    <a href="#profile">Profil</a>
+    <a href="#skills">Skill</a>
+    <a href="#portfolio">Portofolio</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <h1><span id="typed-text"></span></h1>
+      <p>Video Editor | Vidiographer </p>
+    </div>
+  </header>
+
+  <section id="profile">
+    <h2 data-aos="fade-up">Tentang Saya</h2>
+    <div class="profile" data-aos="fade-up" data-aos-delay="100">
+      <img src="img/pp.jpeg" alt="Foto Profil">
+      <p>Saya adalah individu yang memiliki ketertarikan tinggi dalam bidang editing video dan produksi konten visual. Terbiasa menggunakan berbagai software editing seperti Adobe Premiere Pro dan CapCut, saya mampu menggabungkan kreativitas dan ketelitian untuk menghasilkan video yang menarik dan komunikatif. Saya antusias untuk terus belajar, berkembang, dan siap memberikan kontribusi terbaik dalam tim produksi. Magang ini adalah langkah penting saya untuk mengasah kemampuan serta memahami industri secara langsung.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 data-aos="fade-up">Skill & Tools</h2>
+    <div class="skills" data-aos="fade-up" data-aos-delay="100">
+      <div class="card">Capcut</div>
+      <div class="card">Premiere Pro</div>
+      <div class="card">Adobe Photoshop</div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2 data-aos="fade-up">Portofolio</h2>
+    <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="card"><iframe src="https://www.youtube.com/embed/jqEmQSlXBQw" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/Y8j8vSYBzhg" allowfullscreen></iframe></div>      
+      <div class="card"><iframe src="https://www.youtube.com/embed/SFWyL8fTp_Y" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/5XRSI4Nf6Eo" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/0Q7AABN1EK0" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/qzDmzKBG-Lk?si=G3n_Bhwl7Ghb4z45" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/2mL5MWfBBdE?si=BM2vl2z4Z76pU9Ee" allowfullscreen></iframe></div>
+      <div class="card"><iframe src="https://www.youtube.com/embed/LXey9wUb0po?si=R6miA-8Aps-woBwU" allowfullscreen></iframe></div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-aos="fade-up">Kontak</h2>
+    <div class="contact" data-aos="fade-up" data-aos-delay="100" style="text-align:center;">
+      <a href="mailto:marsproject1208@gmail.com"><i class="fas fa-envelope"></i> marsproject1208@gmail.com</a>
+      <a href="https://wa.me/6289634088549" target="_blank"><i class="fab fa-whatsapp"></i> +62 896-3408-8549</a>
+      <a href="https://instagram.com/xzazxca_" target="_blank"><i class="fab fa-instagram"></i> @xzazxca_</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Almarsya Damayanti
+    . All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#typed-text", {
+      strings: ["Halo, Saya Almarsya Damayanti", " Saya adalah Editor Video sekaligus Vidiographer"],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  </body>
+  </html>
+      
